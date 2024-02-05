@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc Register (RegisterRequest) returns(RegisterReply);
+  rpc SignIn (SignInRequest) returns(SignInReply);
+  rpc CreateGroup (CreateGroupRequest) returns(AcceptIvteReply);
+  rpc ServerSendDataOfGroup (ClientDownData) returns(SendDataOfGroup);
+  rpc SendMail (ClientSendMess) returns(ServerReplyMess);
+  rpc ServerSendDataMess (ClientDownDataNess) returns(SendDataOfGroupMess);
+}
+
+message RegisterRequest {
+	string username = 1;
+	string password = 2;
+	string confirmPass = 3;
+}
+
+message RegisterReply {
+	string message = 1;
+}
+
+message SignInRequest{
+	string username = 1;
+	string password = 2;
+}
+
+message SignInReply{
+	string message = 1;
+}
+
+message CreateGroupRequest{
+	string invitemail = 1;
+	string username = 2;
+}
+
+message AcceptIvteReply{
+	string message = 1;
+}
+
+message ClientDownData {
+	string username = 1;
+}
+
+message SendDataOfGroup {
+	string message = 1;
+}
+
+message ClientSendMess {
+	string mess = 1;
+	string username = 2;
+	string Group = 3;
+}
+
+message ServerReplyMess {
+	string message = 1;
+}
+
+message ClientDownDataNess {
+	string Group = 1;
+}
+
+message SendDataOfGroupMess {
+	string message = 1;
+}

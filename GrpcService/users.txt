@@ -1,0 +1,5 @@
+quang1:1
+quang2:1
+quang3:1
+quang4:1
+quang5:1
